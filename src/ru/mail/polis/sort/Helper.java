@@ -15,6 +15,9 @@ public class Helper {
 
     public static int[] gen(int n) {
         int[] a = new int[n];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = i;
+        }
         for (int i = a.length - 1; i > 0; i--) {
             int j = r.nextInt(i + 1);
             Helper.swap(a, i, j);
