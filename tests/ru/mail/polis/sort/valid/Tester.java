@@ -21,23 +21,12 @@ import ru.mail.polis.sort.Helper;
 @RunWith(value = Parameterized.class)
 public class Tester {
 
-    private static final Random r = ThreadLocalRandom.current();
-
     @Rule
     public TestRule watcher = new TestWatcher() {
         protected void starting(final Description description) {
             System.err.println("=== Running " + description.getMethodName());
         }
     };
-
-    private static int[] gen(int n) {
-        int[] a = new int[n];
-        for (int i = a.length - 1; i > 0; i--) {
-            int j = r.nextInt(i + 1);
-            Helper.swap(a, i, j);
-        }
-        return a;
-    }
 
     @Parameterized.Parameter
     public int[] array;
@@ -51,11 +40,11 @@ public class Tester {
             {0, 1, 1, 0},
             {1},
             {Integer.MAX_VALUE, 0, 0, Integer.MIN_VALUE},
-            gen(1),
-            gen(10),
-            gen(100),
-            gen(1000),
-            gen(10000),
+            Helper.gen(1),
+            Helper.gen(10),
+            Helper.gen(100),
+            Helper.gen(1000),
+            Helper.gen(10000),
         });
     }
 
