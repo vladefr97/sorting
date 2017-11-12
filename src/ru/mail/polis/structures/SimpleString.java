@@ -14,8 +14,8 @@ public class SimpleString implements Numerical<Character>, Comparable<SimpleStri
     private final int length;
 
     public SimpleString(String data) throws IllegalArgumentException {
-        if (data == null) {
-            throw new IllegalArgumentException("Source must be not null");
+        if (data == null || data.length() == 0) {
+            throw new IllegalArgumentException("Source must be not null and not empty");
         }
         if (!SIMPLE_STRING.matcher(data).matches()) {
             throw new IllegalArgumentException("Bad characters in string [" + data + "]. Must be [a-z]");
