@@ -17,7 +17,7 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import ru.mail.polis.sort.BubbleSort;
-import ru.mail.polis.sort.Helper;
+import ru.mail.polis.sort.SortUtils;
 
 @State(Scope.Thread)
 @BenchmarkMode(Mode.AverageTime)
@@ -28,7 +28,7 @@ public class BubbleSortBench {
 
     @Setup(value = Level.Invocation)
     public void setUpInvocation() {
-        a = Helper.gen(1000);
+        a = SortUtils.generateArray(1000);
     }
 
     @Benchmark

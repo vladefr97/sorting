@@ -3,7 +3,7 @@ package ru.mail.polis.sort;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Helper {
+public class SortUtils {
 
     private static final Random r = ThreadLocalRandom.current();
 
@@ -13,15 +13,23 @@ public class Helper {
         a[j] = x;
     }
 
-    public static int[] gen(int n) {
+    public static int[] generateArray(int n) {
         int[] a = new int[n];
         for (int i = 0; i < a.length; i++) {
             a[i] = i;
         }
         for (int i = a.length - 1; i > 0; i--) {
             int j = r.nextInt(i + 1);
-            Helper.swap(a, i, j);
+            SortUtils.swap(a, i, j);
         }
         return a;
+    }
+
+    public static boolean isArraySorted(int[] a) {
+        boolean isSorted = true;
+        for (int i = 0; i < a.length - 1 && isSorted; i++) {
+            isSorted = a[i] <= a[i + 1];
+        }
+        return isSorted;
     }
 }

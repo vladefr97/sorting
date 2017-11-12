@@ -20,7 +20,7 @@ import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
 import ru.mail.polis.sort.BubbleSort;
-import ru.mail.polis.sort.Helper;
+import ru.mail.polis.sort.SortUtils;
 
 /**
  * Created by Nechaev Mikhail
@@ -44,7 +44,7 @@ public class AverageTimeBench {
         data = new int[10][100];
         for (int i = 0; i < 10; i++) {
             //define arrays here
-            data[i] = Helper.gen(100);
+            data[i] = SortUtils.generateArray(100);
         }
     }
 

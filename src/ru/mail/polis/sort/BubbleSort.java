@@ -9,7 +9,7 @@ public class BubbleSort {
             wasSwap = false;
             for (int i = 0; i < a.length - j - 1; i++) {
                 if (a[i] > a[i + 1]) {
-                    Helper.swap(a, i, i + 1);
+                    SortUtils.swap(a, i, i + 1);
                     wasSwap = true;
                 }
             }
