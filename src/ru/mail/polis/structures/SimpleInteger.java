@@ -6,6 +6,8 @@ package ru.mail.polis.structures;
  */
 public class SimpleInteger implements Numerical, Comparable<SimpleInteger> {
 
+    private static final int DIGIT_COUNT = 10;
+
 //    private final todo data;
 //    private final int length;
 
@@ -24,7 +26,12 @@ public class SimpleInteger implements Numerical, Comparable<SimpleInteger> {
     }
 
     @Override
-    public int getLength() {
+    public int getDigitMaxValue() {
+        return DIGIT_COUNT;
+    }
+
+    @Override
+    public int getDigitCount() {
         //todo
         return 0;
     }

@@ -8,8 +8,9 @@ import java.util.regex.Pattern;
  */
 public class SimpleString implements Numerical, Comparable<SimpleString> {
 
-    private final static Pattern SIMPLE_STRING = Pattern.compile("^[a-z]+$");
-    private final static int MIN_CHAR_VALUE = 'a';
+    private static final Pattern SIMPLE_STRING = Pattern.compile("^[a-z]+$");
+    private static final int DIGIT_COUNT = 'z' - 'a';
+    private static final int MIN_CHAR_VALUE = 'a';
 
     private final String data;
     private final int length;
@@ -34,7 +35,12 @@ public class SimpleString implements Numerical, Comparable<SimpleString> {
     }
 
     @Override
-    public int getLength() {
+    public int getDigitMaxValue() {
+        return DIGIT_COUNT;
+    }
+
+    @Override
+    public int getDigitCount() {
         return length;
     }
 

@@ -5,7 +5,9 @@ package ru.mail.polis.structures;
  * Since 13/11/2017.
  */
 public interface IntKeyObject<V> extends Comparable<IntKeyObject> {
+
     int getKey();
+
     V getValue();
 
     @Override
