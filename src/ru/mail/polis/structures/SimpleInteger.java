@@ -21,8 +21,14 @@ public class SimpleInteger implements Numerical, Comparable<SimpleInteger> {
 
     @Override
     public int getDigit(int index) throws IndexOutOfBoundsException {
-        //todo
-        return 0;
+        if (index < 0) {
+            throw new IndexOutOfBoundsException("Negative index " + index);
+        } else if (index >= getDigitCount()) {
+            return 0;
+        } else {
+            //todo
+            return 0;
+        }
     }
 
     @Override
