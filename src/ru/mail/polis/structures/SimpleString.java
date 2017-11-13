@@ -6,9 +6,10 @@ import java.util.regex.Pattern;
  * Created by Nechaev Mikhail
  * Since 12/11/2017.
  */
-public class SimpleString implements Numerical<Character>, Comparable<SimpleString> {
+public class SimpleString implements Numerical, Comparable<SimpleString> {
 
     private final static Pattern SIMPLE_STRING = Pattern.compile("^[a-z]+$");
+    private final static int MIN_CHAR_VALUE = 'a';
 
     private final String data;
     private final int length;
@@ -25,11 +26,11 @@ public class SimpleString implements Numerical<Character>, Comparable<SimpleStri
     }
 
     @Override
-    public Character getDigit(int index) {
+    public int getDigit(int index) {
         if (index < 0 || index >= length) {
             throw new IndexOutOfBoundsException("Incorrect index " + index);
         }
-        return data.charAt(index);
+        return data.charAt(index) - MIN_CHAR_VALUE;
     }
 
     @Override

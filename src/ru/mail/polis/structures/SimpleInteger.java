@@ -4,7 +4,7 @@ package ru.mail.polis.structures;
  * Created by Nechaev Mikhail
  * Since 12/11/2017.
  */
-public class SimpleInteger implements Numerical<Integer>, Comparable<SimpleInteger> {
+public class SimpleInteger implements Numerical, Comparable<SimpleInteger> {
 
 //    private final todo data;
 //    private final int length;
@@ -18,9 +18,9 @@ public class SimpleInteger implements Numerical<Integer>, Comparable<SimpleInteg
     }
 
     @Override
-    public Integer getDigit(int index) throws IndexOutOfBoundsException {
+    public int getDigit(int index) throws IndexOutOfBoundsException {
         //todo
-        return null;
+        return 0;
     }
 
     @Override
